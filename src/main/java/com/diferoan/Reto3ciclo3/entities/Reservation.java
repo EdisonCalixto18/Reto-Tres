@@ -24,7 +24,7 @@ import javax.persistence.Table;
  * @author Edison C
  */
 @Entity
-@Table (name="reservation")
+@Table (name ="reservation")
 public class Reservation implements Serializable{
     
     @Id
@@ -40,8 +40,8 @@ public class Reservation implements Serializable{
     
     
     @ManyToOne
-    @JoinColumn(name = "motorbike_id")
-    @JsonIgnoreProperties(value = {"reservations","messages:clients"})
+    @JoinColumn(name = "id")
+    @JsonIgnoreProperties("reservations")
     private Motorbike motorbike;
     
     @ManyToOne
@@ -51,9 +51,6 @@ public class Reservation implements Serializable{
     
     private String score;
 
-    public Reservation() {
-        this.status = "created";
-    }
 
     public Integer getIdReservation() {
         return idReservation;
