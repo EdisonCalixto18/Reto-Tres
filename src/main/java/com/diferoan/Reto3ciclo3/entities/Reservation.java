@@ -40,8 +40,8 @@ public class Reservation implements Serializable{
     
     
     @ManyToOne
-    @JoinColumn(name = "id")
-    @JsonIgnoreProperties("reservations")
+    @JoinColumn(name = "motorbike_id")
+    @JsonIgnoreProperties(value = {"reservations","messages:client"})
     private Motorbike motorbike;
     
     @ManyToOne
@@ -51,6 +51,9 @@ public class Reservation implements Serializable{
     
     private String score;
 
+    public Reservation() {
+        this.status = "created";
+    }
 
     public Integer getIdReservation() {
         return idReservation;

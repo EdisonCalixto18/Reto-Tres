@@ -1,4 +1,4 @@
-package com.diferoan.reto3;
+package com.diferoan.Reto3ciclo3;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
