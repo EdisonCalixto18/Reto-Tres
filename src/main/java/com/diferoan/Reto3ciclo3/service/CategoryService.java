@@ -43,4 +43,30 @@ public class CategoryService {
  
     }
     
+    public Category update(Category category){
+    if (category.getId()!=null){     
+        Optional<Category>g=categoryRepository.getCategory(category.getId());
+        if(g.isEmpty()){
+            if (category.getName()!=null){
+                g.get().setName(category.getName());
+            }
+            return categoryRepository.save(g.get());
+            
+            
+        }
+    }
+    return category;
+}
+
+public boolean deleteCategory(int id){
+    Optional<Category> c=getCategory(id);
+    if(!c.isEmpty()){
+        categoryRepository.delete(c.get());
+         return true;
+
+    }
+    return false;
+    
+  }
+  
 }
