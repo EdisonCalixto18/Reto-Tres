@@ -46,7 +46,7 @@ public class MotorbikeService {
     public Motorbike update(Motorbike category){
     if (category.getId()!=null){     
         Optional<Motorbike>g=motorbikeRepository.getMotorbike(category.getId());
-        if(g.isEmpty()){
+        if(!g.isEmpty()){
             if (category.getName()!=null){
                 g.get().setName(category.getName());
             }

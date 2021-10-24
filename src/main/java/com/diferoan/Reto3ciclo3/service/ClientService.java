@@ -46,7 +46,7 @@ public class ClientService {
     public Client update(Client category){
     if (category.getIdClient()!=null){     
         Optional<Client>g=clientRepository.getClient(category.getIdClient());
-        if(g.isEmpty()){
+        if(!g.isEmpty()){
             if (category.getName()!=null){
                 g.get().setName(category.getName());
             }

@@ -18,15 +18,14 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class CategoryRepository {
-      @Autowired
-      private CategoryCrud categoryCrudRepository;
+       @Autowired
+       private CategoryCrud categoryCrudRepository;
   
-  public List<Category> getAll() {return (List<Category>) categoryCrudRepository.findAll();};
+       public List<Category> getAll() {return (List<Category>) categoryCrudRepository.findAll();};
   
-  public Optional<Category> getCategory(int id) {return categoryCrudRepository.findById(id);};
+       public Optional<Category> getCategory(int id) {return categoryCrudRepository.findById(id);};
+       public Category save(Category category) { return categoryCrudRepository.save(category);};
+       public void delete(Category category){categoryCrudRepository.delete(category);}
   
-  public Category save(Category category) { return categoryCrudRepository.save(category);};
-  
-  public void delete(Category category){categoryCrudRepository.delete(category);}
   
 }

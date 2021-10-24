@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  * @author Edison C
  */
 @Repository
-public interface MotorbikeCrud extends CrudRepository<Motorbike, Integer> {
+public interface MotorbikeCrud extends CrudRepository<Motorbike,Integer> {
     
 }

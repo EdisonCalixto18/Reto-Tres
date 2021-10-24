@@ -5,6 +5,8 @@
  */
 package com.diferoan.Reto3ciclo3.entities;
 
+import com.diferoan.Reto3ciclo3.entities.Category;
+import com.diferoan.Reto3ciclo3.entities.Motorbike;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +15,6 @@ import org.springframework.stereotype.Repository;
  * @author Edison C
  */
 @Repository
-public interface CategoryCrud extends CrudRepository<Category, Integer> {
+public interface CategoryCrud extends CrudRepository<Category,Integer> {
     
 }

@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CategoryService {
     @Autowired
-    CategoryRepository categoryRepository;
+    private CategoryRepository categoryRepository;
     
     public List<Category> getAll() {return (List<Category>) categoryRepository.getAll();};
   
@@ -46,9 +46,12 @@ public class CategoryService {
     public Category update(Category category){
     if (category.getId()!=null){     
         Optional<Category>g=categoryRepository.getCategory(category.getId());
-        if(g.isEmpty()){
+        if(!g.isEmpty()){
             if (category.getName()!=null){
                 g.get().setName(category.getName());
+            }
+            if (category.getDescription()!=null){
+                g.get().setDescription(category.getDescription());
             }
             return categoryRepository.save(g.get());
             
