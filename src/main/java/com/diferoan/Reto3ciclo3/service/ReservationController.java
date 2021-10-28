@@ -6,7 +6,7 @@
 package com.diferoan.Reto3ciclo3.service;
 
 import Report.CountClients;
-import Report.StatusReservation;
+import Report.StatusReserve;
 import com.diferoan.Reto3ciclo3.entities.Reservation;
 import java.util.List;
 import java.util.Optional;
@@ -46,13 +46,13 @@ public class ReservationController {
     
   
       @GetMapping("/report-status")
-      public StatusReservation getReservas(){
+      public StatusReserve getReserve(){
           return reservationService.getReporteStatusReservation();
       }
       
      @GetMapping("/report-dates/{dateOne}/{dateTwo}")
       public List<Reservation>getReservationTime (@PathVariable("dateOne")String dateOne, @PathVariable("dateTwo")String dateTwo ){
-          return reservationService.getReporetTimeReservation(dateOne, dateTwo);
+          return reservationService.getReporteTimeReservation(dateOne, dateTwo);
           
       }
  

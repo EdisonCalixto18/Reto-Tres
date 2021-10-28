@@ -8,15 +8,15 @@ package Report;
  *
  * @author HALCO
  */
-public class StatusReservation {
+public class StatusReserve {
     
     
     private int completed;
-    private int Canceled;
+    private int cancelled;
 
-    public StatusReservation(int completed, int Canceled) {
+    public StatusReserve(int completed, int cancelled) {
         this.completed = completed;
-        this.Canceled = Canceled;
+        this.cancelled = cancelled;
     }
 
     public int getCompleted() {
@@ -27,12 +27,12 @@ public class StatusReservation {
         this.completed = completed;
     }
 
-    public int getCanceled() {
-        return Canceled;
+    public int getCancelled() {
+        return cancelled;
     }
 
-    public void setCanceled(int Canceled) {
-        this.Canceled = Canceled;
+    public void setCancelled(int cancelled) {
+        this.cancelled = cancelled;
     }
     
     

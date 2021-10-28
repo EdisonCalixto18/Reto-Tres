@@ -6,7 +6,7 @@
 package com.diferoan.Reto3ciclo3.service;
 
 import Report.CountClients;
-import Report.StatusReservation;
+import Report.StatusReserve;
 import com.diferoan.Reto3ciclo3.dao.ReservationRepository;
 import com.diferoan.Reto3ciclo3.entities.Reservation;
 import java.text.ParseException;
@@ -48,20 +48,20 @@ public class ReservationService {
             }
         }
     }
-    public StatusReservation getReporteStatusReservation(){
-     List<Reservation>completed= reservationRepository.ReservationStatus("Completed");    
-     List<Reservation>canceled= reservationRepository.ReservationStatus("Canceled");  
-    return new StatusReservation (completed.size(), canceled.size());
+    public StatusReserve getReporteStatusReservation(){
+     List<Reservation>completed= reservationRepository.ReservationStatus("completed");    
+     List<Reservation>cancelled= reservationRepository.ReservationStatus("cancelled");  
+    return new StatusReserve (completed.size(), cancelled.size());
   }
      
-    public List<Reservation> getReporetTimeReservation (String Datea, String Dateb){
-    SimpleDateFormat parser=new SimpleDateFormat ("yyyy-mm-dd");
+    public List<Reservation> getReporteTimeReservation (String datoA, String datoB){
+    SimpleDateFormat parser=new SimpleDateFormat ("yyyy-MM-dd");
     Date datoUno = new Date();
     Date datoDos = new Date();
 
 try{
-    datoUno = parser.parse(Datea);
-    datoDos = parser.parse(Dateb);
+    datoUno = parser.parse(datoA);
+    datoDos = parser.parse(datoB);
     
 }catch(ParseException evt){
     evt.printStackTrace();
@@ -71,7 +71,7 @@ try{
     return new ArrayList<>();
 }
 
-    }
+}
 public List<CountClients> serviceTopClients (){
     return reservationRepository.getTopClients();
 }
