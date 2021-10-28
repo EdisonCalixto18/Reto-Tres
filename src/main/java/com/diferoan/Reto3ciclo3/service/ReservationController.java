@@ -5,6 +5,8 @@
  */
 package com.diferoan.Reto3ciclo3.service;
 
+import Report.CountClients;
+import Report.StatusReservation;
 import com.diferoan.Reto3ciclo3.entities.Reservation;
 import java.util.List;
 import java.util.Optional;
@@ -42,4 +44,21 @@ public class ReservationController {
     @ResponseStatus(HttpStatus.CREATED)
       public Reservation save(@RequestBody Reservation reservation) {return reservationService.save(reservation);};
     
+  
+      @GetMapping("/report-status")
+      public StatusReservation getReservas(){
+          return reservationService.getReporteStatusReservation();
+      }
+      
+     @GetMapping("/report-dates/{dateOne}/{dateTwo}")
+      public List<Reservation>getReservationTime (@PathVariable("dateOne")String dateOne, @PathVariable("dateTwo")String dateTwo ){
+          return reservationService.getReporetTimeReservation(dateOne, dateTwo);
+          
+      }
+ 
+    @GetMapping("/report-clients")
+    public List<CountClients> getClients(){
+        return reservationService.serviceTopClients();
+    
+    }
 }
