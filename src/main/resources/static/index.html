@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="application/json" >
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RETO3</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/misFunciones.js"></script>
+	<h1>RETO ALQUILER MOTOS</h1>
+	
+	<div id="botonesPlatillas">
+		<input type ="button" onclick="objetoCategoria()" title="Consultar CATEGORIA" value="Consultar CATEGORIA">
+		<input type ="button" onclick="objetoMotos()" title="Consultar MOTO" value="Consultar MOTO">
+		<input type ="button" onclick="objetoClientes()" title="Consultar CLIENTES" value="Consultar CLIENTES">
+		<input type ="button" onclick="objetoMensajes()" title="Consultar MENSAJES" value="Consultar MENSAJES">
+		<input type ="button" onclick="objetoReservas()" title="Consultar RESERVAS" value="Consultar RESERVAS">
+		
+	</div>
+	
+	<!--Vista de Categoria -->
+	<div id="verObjetosCategoria" style="display: none">
+		<div id="resultadoCategoria" style="margin: 10px"></div>
+		<div style="margin: 5px">
+		    <input type="text" id="nameCategory" placeholder="name" style="width: 200px">
+		   <input type="text" id="descripCategory" placeholder="name" style="width: 200px">
+		   <button onclick="guardarInfoCategoria()">Guardar</button>
+		   <button onclick="editarInfoCategoria()">Editar</button>
+		   <button onclick="eliminarInfoCategoria()">Eliminar</button>
+		</div>
+	</div>
+	
+	<!--Vista de MOTO -->
+	<div id="verObjetosMotos" style="display: none">
+		<div id="resultadoMoto" style="margin: 10px"></div>
+		<div style="margin: 5px">
+		   <input type="text" id="nameMoto" placeholder="Name" style="width: 200px">
+		   <input type="text" id="brandMoto" placeholder="Brand" style="width: 200px">
+		   <input type="number" id="yearMoto" placeholder="Year" style="width: 200px">
+		   <input type="text" id="descripMoto" placeholder="Descriptions" style="width: 200px">
+		   <select id="categoriaMoto" required></select>
+		   <button onclick="guardarInfoMoto()">Guardar</button> 
+		   <button onclick="editarInfoMoto()">Editar</button> 
+		   <button onclick="editarInfoMoto()">Eliminar</button> 
+		   
+		</div>
+	</div>
+	
+	<!--Vista de CLIENTES -->
+	<div id="verObjetosClient" style="display: none">
+		<div id="resultadoClient" style="margin: 10px"></div>
+		<div style="margin: 5px">
+		   <input type="text" id="nameClient" placeholder="Name" style="width: 200px">
+		   <input type="text" id="emailClient" placeholder="Email" style="width: 200px">
+		   <input type="text" id="passwordClient" placeholder="Password" style="width: 200px">
+		   <input type="number" id="ageClient" placeholder="Age" style="width: 200px">
+		   <button onclick="guardarInfoClient()">Guardar</button> 
+		   <button onclick="editarInfoClient()">Editar</button>
+		   <button onclick="eliminarInfoClient()">Eliminar</button>
+		</div>
+	</div>
+	
+	<!--Vista de MENSAJES -->
+	<div id="verObjetosMensajes" style="display: none">
+		<div id="resultadoMensajes" style="margin: 10px"></div>
+		<div style="margin: 5px">
+		   <input type="text" id="messageTextMes" placeholder="MENSAJE" style="width: 200px">
+		   <select id="mensajeClient" required></select>
+		   <select id="mensajeMoto" required></select>
+		   <button onclick="guardarInfoMensaje()">Guardar</button> 
+		</div>
+	</div>
+	
+	<!--Vista de RESERVAS -->
+	<div id="verObjetosReservas" style="display: none">
+		<div id="resultadoReservas" style="margin: 10px"></div>
+		<div style="margin: 5px">
+		   <input type="text" id="startDateRes" placeholder="INICIO" style="width: 200px">
+		   <input type="text" id="devolutionDateRes" placeholder="FIN" style="width: 200px">
+		   <select id="reservaClient" required></select>
+		   <select id="reservaMoto" required></select>
+		   <button onclick="guardarInfoReservas()">Guardar</button> 
+		</div>
+	</div>
+	
+
+	
+	
+</body>
+</html>
+
+
